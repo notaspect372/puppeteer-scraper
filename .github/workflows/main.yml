@@ -1,0 +1,39 @@
+name: Puppeteer Scraper
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-scraper:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'  # Updated to Node.js version 20
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Create output directory
+      run: mkdir -p output  # Ensure output directory is created
+
+    - name: Run Puppeteer scraper
+      run: |
+        # Run the Puppeteer script with logging and sandbox flags for headless environments
+        node main.js
+      env:
+        PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'  # Avoid Chromium download since it's already installed on GitHub Actions
+
+    - name: Check if files exist
+      run: ls -la output  # This step checks if Excel files are being saved in the 'output' directory
+
+    - name: Upload Excel output
+      uses: actions/upload-artifact@v3
+      with:
+        name: scraper-output
+        path: 'output/*.xlsx'
