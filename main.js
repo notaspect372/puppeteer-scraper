@@ -46,14 +46,9 @@ async function scrapeAmenities(page) {
 
 (async () => {
     // Launch browser with Edge, headless off
-    const browser = await puppeteer.launch({
-    executablePath: 'C:/Program Files/Microsoft/Edge/Application/msedge.exe', // Correct the path
-    headless: 'new',
-    args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--start-maximized'
-    ]
+const browser = await puppeteerExtra.launch({
+  headless: 'new', // Correctly set headless to 'new'
+  args: ['--no-sandbox', '--disable-setuid-sandbox']
 });
 
     const page = await browser.newPage();
