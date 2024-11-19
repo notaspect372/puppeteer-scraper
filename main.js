@@ -47,14 +47,14 @@ async function scrapeAmenities(page) {
 (async () => {
     // Launch browser with Edge, headless off
     const browser = await puppeteer.launch({
-        executablePath: 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', // Path to Edge browser
-        headless: 'new', // Headless mode off
-        args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--start-maximized'  // This will start the browser in full-screen mode
-        ]
-    });
+    executablePath: 'C:/Program Files/Microsoft/Edge/Application/msedge.exe', // Correct the path
+    headless: 'new',
+    args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--start-maximized'
+    ]
+});
 
     const page = await browser.newPage();
 
