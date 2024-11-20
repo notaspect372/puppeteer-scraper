@@ -248,7 +248,7 @@ const browser = await puppeteerExtra.launch({
 
     // URLs to scrape
     const baseUrls = [
-        'https://www.privateproperty.com.ng/property-for-sale?search=&auto=&ptype=&bedroom=1&min_price=&max_price=500000&button=',
+        'https://www.privateproperty.com.ng/property-for-sale?search=&auto=&ptype=&bedroom=&min_price=&max_price=&button=',
         // Add more URLs as needed
     ];
 
