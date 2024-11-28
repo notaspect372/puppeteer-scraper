@@ -4,6 +4,8 @@ const path = require('path');
 const { URL } = require('url');
 const ExcelJS = require('exceljs');
 const { start } = require('repl');
+const puppeteer = require('puppeteer-core');
+const puppeteerExtra = require('puppeteer-extra');
 
 const delay = (time) => new Promise(resolve => setTimeout(resolve, time));
 
@@ -51,11 +53,11 @@ const startUrls = [
 ];
 
 (async () => {
-    const browser = await puppeteer.launch({
-        headless: false,
-        executablePath: 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe', // Path to Edge browser
-        args: ['--start-maximized'] // This will open the browser in full screen
-    });
+  const browser = await puppeteerExtra.launch({
+    headless: 'new',
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    defaultViewport: null,
+});
 
     const page = await browser.newPage();
 
