@@ -35,5 +35,5 @@ jobs:
     - name: Upload Excel output
       uses: actions/upload-artifact@v3
       with:
-        name: scraper-output
+        name: belgium
         path: 'output/*.xlsx'
