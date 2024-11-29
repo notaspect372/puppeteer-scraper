@@ -47,8 +47,9 @@ async function getLatLongFromAddress(address) {
 
 
 const startUrls = [
-    "https://www.immoweb.be/fr/recherche/industrie/a-vendre?countries=BE&maxPrice=200000&minPrice=175000&priceType=SALE_PRICE&page=1&orderBy=relevance",
-    "https://www.immoweb.be/en/search/other/for-sale?countries=BE&priceType=SALE_PRICE&page=1&orderBy=relevance"
+    "https://www.immoweb.be/en/search/other/for-sale?countries=BE&priceType=SALE_PRICE&page=1&orderBy=relevance",
+    "https://www.immoweb.be/fr/recherche/maison/a-vendre?countries=BE&maxPrice=100000&page=1&orderBy=relevance",
+    "https://www.immoweb.be/fr/recherche/maison/a-vendre?countries=BE&maxPrice=175000&minPrice=150000&page=1&orderBy=relevance"
     // Add your URLs here
 ];
 
